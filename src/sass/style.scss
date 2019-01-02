@@ -7,6 +7,9 @@
 @import "icons";
 @import "fonts";
 @import "highlight";
+@import "variables";
+@import url('https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Lora|Source+Serif+Pro|Yrsa');
+@import url('https://fonts.googleapis.com/css?family=Assistant:800|Heebo:700|Hind:700|Khula:700|Work+Sans:700');
 
 /* ==========================================================================
    Basics
@@ -34,7 +37,7 @@ html.menu-active,
 }
 
 body {
-	font: 400 2em / 1.5em 'Cardo', serif;
+	font: 500 2.3em / 1.45em 'Yrsa', serif;
 	color: $color-blue-30;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -61,7 +64,7 @@ a:focus {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'Heebo', sans-serif;
 	text-rendering: optimizeLegibility;
 	color: $color-black;
 }
@@ -70,26 +73,26 @@ h1 {
 	font-size: 2em;
 	line-height: 1em;
 	text-indent: -1px;
-	margin: 1em 0 1em;
+	margin-bottom: 0.5em;
 }
 
 h2 {
 	font-size: 1.75em;
 	line-height: 1.111em;
 	text-indent: -1px;
-	margin: 1.143em 0 1.143em;
+	margin-bottom: 0.5em;
 }
 
 h3 {
 	font-size: 1.5em;
 	line-height: 1.334em;
-	margin: 1em 0 1em;
+	margin-bottom: 0.5em;
 }
 
 h4 {
 	font-size: 1.25em;
 	line-height: 1.2em;
-	margin: 1.2em 0 1.2em;
+	margin-bottom: 0.5em;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -97,19 +100,20 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 p {
-    margin: 0 0 2em;
+    margin-bottom: 0.5em;
 }
 
 ul, ol {
-    margin: 0 0 2em;
-    padding-left: 2em;
-    box-sizing: border-box;
+    padding-left: 0;
+		box-sizing: border-box;
+		list-style-position: outside;
 }
 
 ul {
 	list-style: none;
 }
 li {
+	margin-bottom: 0.8em;
 	position: relative;
 }
 ul > li:before,
@@ -145,7 +149,7 @@ ol ol, ul ul, ul ol, ol ul {
 hr {
     display: block;
     height: 1px;
-    margin: 0 0 2em;
+    margin: 1em 0 1em;
     padding: 0;
 	  background: $color-gray-90;
     border: 0;
@@ -156,7 +160,7 @@ blockquote {
     padding: 1em;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border-left: 0.25em solid $color-gray-90;
+    border-left: 0.25em solid $color-red-95;
     font-style: italic;
     font-weight: 400;
     color: $color-blue-30;
@@ -230,7 +234,7 @@ code, tt {
 
 pre {
 	position: relative;
-	margin: 0 0 2em;
+	margin: 0 0 1em;
 	padding: 1em;
 	overflow: hidden;
 	font-family: monospace, sans-serif;
@@ -367,7 +371,7 @@ img[src$="#full"] {
     font-family: 'Fira Sans', sans-serif;
     color: $color-blue-60;
     text-align: center;
-    max-width: 32em;
+    max-width: $page-width;
     margin: auto;
   	font-size: 0.75em;
   	line-height: 1.25em;
@@ -389,7 +393,7 @@ img[src$="#full"] {
     font-family: 'Fira Sans', sans-serif;
     color: $color-blue-60;
     text-align: center;
-    max-width: 32em;
+    max-width: $page-width;
     margin: auto;
   	font-size: 0.75em;
   	line-height: 1.25em;
@@ -493,11 +497,12 @@ img[src$="#full"] {
 #blog-header {
 	position: relative;
 	padding: 6em 0;
+	margin-bottom: 35px;
 	text-align: center;
 }
 #blog-header:after {
 	position: absolute;
-	width: 32em;
+	width: $page-width;
 	height: 1px;
 	left: 50%;
 	bottom: 0;
@@ -568,7 +573,7 @@ img[src$="#full"] {
 	text-decoration: none;
 }
 .home-template .blog-name {
-	font-size: 3em;
+	font-size: 2.5em;
 }
 .has-cover .blog-name {
 	color: $color-white;
@@ -588,7 +593,7 @@ img[src$="#full"] {
 	line-height: 1.5em;
 }
 .home-template .blog-description {
-	font-size: 1.5em;
+	font-size: 1.3em;
 }
 .has-cover .blog-description {
 	color: $color-white;
@@ -617,7 +622,7 @@ img[src$="#full"] {
 
 
 .inner {
-	max-width: 32em;
+	max-width: $page-width;
 	margin: 0 auto;
 	padding: 0 2em;
 }
@@ -886,9 +891,9 @@ img[src$="#full"] {
 }
 #blog-author:after {
 	position: absolute;
-	width: 32em;
+	width: $page-width;
 	height: 1px;
-	left: 50%;
+	left: 48%;
 	bottom: 0;
 	margin-left: -16em;
 	content: '';
@@ -927,13 +932,13 @@ img[src$="#full"] {
 	position: relative;
 }
 .container .post {
-	padding: 4em 0;
+	padding: 2em 0;
 }
 .container .post:after {
 	position: absolute;
-	width: 32em;
+	width: $page-width;
 	height: 1px;
-	left: 50%;
+	left: 48%;
 	bottom: 0;
 	margin-left: -16em;
 	content: '';
@@ -964,7 +969,7 @@ img[src$="#full"] {
 }
 .page-template #footer:after {
 	position: absolute;
-	width: 32em;
+	width: $page-width;
 	height: 1px;
 	left: 50%;
 	top: 0;
@@ -982,6 +987,7 @@ img[src$="#full"] {
 	padding-top: 6em;
 }
 #post-header.has-cover {
+	margin-bottom: 2em;
 	padding: 16em 0 2em;
 	background: $color-black;
 	overflow: hidden;
@@ -1016,7 +1022,7 @@ img[src$="#full"] {
 	position: relative;
 	z-index: 10;
 	margin: 0 0 0.25em;
-	font-size: 2em;
+	font-size: 1.7em;
 	line-height: 1em;
 	font-weight: 700;
 	text-indent: -1px;
@@ -1062,7 +1068,7 @@ img[src$="#full"] {
 	margin: 0.5em 0 0;
 }
 .post-content {
-  padding: 2em 0;
+  // padding: 2em 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1086,6 +1092,16 @@ img[src$="#full"] {
 .post-content a:hover,
 .post-content a:focus {
 	color: $primary-color;
+}
+
+.post-content h2 {
+	margin-bottom: 0;
+}
+
+.post-content ul, 
+.post-content ol {
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 /* ==========================================================================
@@ -1455,16 +1471,16 @@ img[src$="#full"] {
 	padding: 2em 0;
 	font-family: 'Fira Sans', sans-serif;
 }
-.pagination:after {
-	position: absolute;
-	width: 32em;
-	height: 1px;
-	left: 50%;
-	bottom: 0;
-	margin-left: -16em;
-	content: '';
-	background: $color-gray-90;
-}
+// .pagination:after {
+// 	position: absolute;
+// 	width: $page-width;
+// 	height: 1px;
+// 	left: 50%;
+// 	bottom: 0;
+// 	margin-left: -16em;
+// 	content: '';
+// 	background: $color-gray-90;
+// }
 .pagination a {
 	position: relative;
 	display: block;
