@@ -8,8 +8,8 @@
 @import "fonts";
 @import "highlight";
 @import "variables";
-@import url('https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Lora|Source+Serif+Pro|Yrsa');
-@import url('https://fonts.googleapis.com/css?family=Assistant:800|Heebo:700|Hind:700|Khula:700|Work+Sans:700');
+@import url('https://fonts.googleapis.com/css?family=Yrsa:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,500,700|Roboto:400,500,700');
 
 /* ==========================================================================
    Basics
@@ -37,7 +37,10 @@ html.menu-active,
 }
 
 body {
-	font: 500 2.3em / 1.45em 'Yrsa', serif;
+	font-family: $serif-font;
+	font-size: 2.3em;
+	line-height: 1.45em;
+	letter-spacing: -0.1px;
 	color: $color-blue-30;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -48,7 +51,7 @@ input,
 button,
 select,
 textarea {
-	font-family: 'Fira Sans', sans-serif;
+	font-family: $sans-serif-font;
 	transition: all ease-out 0.2s;
 }
 
@@ -65,6 +68,7 @@ a:focus {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Heebo', sans-serif;
+	font-weight: 700;
 	text-rendering: optimizeLegibility;
 	color: $color-black;
 }
@@ -100,7 +104,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 p {
-    margin-bottom: 0.5em;
+		margin-bottom: 0;
 }
 
 ul, ol {
@@ -109,28 +113,23 @@ ul, ol {
 		list-style-position: outside;
 }
 
-ul {
-	list-style: none;
-}
 li {
 	margin-bottom: 0.8em;
 	position: relative;
 }
+
+li:last-child {
+	margin-bottom: 0;
+}
+
 ul > li:before,
 ol > li:before {
 	position: absolute;
 	width: 1.5em;
 	margin-left: -2em;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: $serif-font;
 	font-size: 1em;
-	font-weight: 500;
-	line-height: 1.5em;
 	text-align: right;
-	color: $color-black;
-}
-ul > li:before {
-	margin-top: 0.25em;
-	content: '*';
 }
 ol {
 	list-style-type: none;
@@ -156,7 +155,7 @@ hr {
 }
 
 blockquote {
-    margin: 0 0 2em;
+    margin: 1em 0;
     padding: 1em;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -195,7 +194,7 @@ dl {
     padding-left: 30px;
 }
 dl dt {
-    font-family: 'Fira Sans', sans-serif;
+    font-family: $sans-serif-font;
   	font-weight: 500;
   	font-size: 0.75em;
   	line-height: 1.25em;
@@ -234,8 +233,9 @@ code, tt {
 
 pre {
 	position: relative;
-	margin: 0 0 1em;
-	padding: 1em;
+	margin-top: 1em;
+	margin-bottom: 0em;
+	padding: 0.5em;
 	overflow: hidden;
 	font-family: monospace, sans-serif;
 	white-space: pre;
@@ -267,8 +267,8 @@ pre code, pre tt {
   display: block;
 	position: static;
 	top: auto;
-	margin: -1.334em -1.334em -1.334em 1.334em;
-	padding: 1.334em;
+	margin: 0;
+	padding: 0.5em 1.334em;
   overflow-x: auto;
 	font-size: 0.75em;
 	line-height: 2em;
@@ -314,7 +314,7 @@ table td {
     border: 1px solid $color-gray-90;
 }
 table th {
-	font-family: 'Fira Sans', sans-serif;
+	font-family: $sans-serif-font;
 	font-weight: 500;
 	font-size: 0.75em;
 	line-height: 1.25em;
@@ -368,7 +368,7 @@ img[src$="#full"] {
   }
 
   figcaption {
-    font-family: 'Fira Sans', sans-serif;
+    font-family: $sans-serif-font;
     color: $color-blue-60;
     text-align: center;
     max-width: $page-width;
@@ -390,7 +390,7 @@ img[src$="#full"] {
   width: 75vw;
 
   figcaption {
-    font-family: 'Fira Sans', sans-serif;
+    font-family: $sans-serif-font;
     color: $color-blue-60;
     text-align: center;
     max-width: $page-width;
@@ -566,7 +566,7 @@ img[src$="#full"] {
 	z-index: 10;
 	margin: 0;
 	padding: 0;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: $sans-serif-font;
 	font-weight: 700;
 	font-size: 2em;
 	line-height: 1em;
@@ -650,7 +650,7 @@ img[src$="#full"] {
 	margin-bottom: 1em;
 	padding: 0.5em 1.25em;
 	border: 1px solid $color-blue-80;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: $sans-serif-font;
 	font-size: 0.75em;
 	line-height: 1.667em;
 	text-shadow: none;
@@ -699,7 +699,7 @@ img[src$="#full"] {
 	border-left: 1px solid $color-gray-90;
 	z-index: 400;
 	overflow: hidden;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: $sans-serif-font;
 	box-shadow: inset -2px 0 7px rgba(0,0,0,0.1);
 	transform: translate3d(16em,0,0);
 	transition: all ease-out 0.25s;
@@ -855,7 +855,7 @@ img[src$="#full"] {
 #footer {
 	position: relative;
 	z-index: 20;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: $sans-serif-font;
 	line-height: 1em;
 	padding-bottom: 6em;
 }
@@ -1021,7 +1021,7 @@ img[src$="#full"] {
 .post-title {
 	position: relative;
 	z-index: 10;
-	margin: 0 0 0.25em;
+	margin: 0 0 0.20em;
 	font-size: 1.7em;
 	line-height: 1em;
 	font-weight: 700;
@@ -1041,7 +1041,7 @@ img[src$="#full"] {
 	z-index: 10;
 	display: block;
 	margin-bottom: 1.334em;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: $sans-serif-font;
 	font-size: 0.75em;
 	font-weight: 400;
 	line-height: 1.334em;
@@ -1071,7 +1071,11 @@ img[src$="#full"] {
   // padding: 2em 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+	align-items: center;
+	
+	& h1, & h2, & h3, & h4, & h5, & h6 {
+		margin-bottom: 0;
+	}
 }
 .post-content > * {
   min-width: 100%;
@@ -1092,10 +1096,6 @@ img[src$="#full"] {
 .post-content a:hover,
 .post-content a:focus {
 	color: $primary-color;
-}
-
-.post-content h2 {
-	margin-bottom: 0;
 }
 
 .post-content ul, 
@@ -1154,7 +1154,7 @@ img[src$="#full"] {
 .post-tags {
 	max-width: 75%;
 	float: left;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: $sans-serif-font;
 }
 .post-tags a {
 	display: inline-block;
@@ -1190,7 +1190,7 @@ img[src$="#full"] {
 	border-top: 1px solid $color-gray-90;
 	border-bottom: 1px solid $color-gray-90;
 	clear: both;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: $sans-serif-font;
 }
 .post-author-avatar {
 	position: relative;
@@ -1269,7 +1269,7 @@ img[src$="#full"] {
 	border-bottom: 1px solid $color-gray-90;
 	clear: both;
   text-align: center;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: $sans-serif-font;
 }
 .post-authors-info {
   margin: 0 0 0.334em;
@@ -1304,7 +1304,7 @@ img[src$="#full"] {
 	margin: 0;
 	padding: 0.5em 1.25em;
 	border: 1px solid $color-blue-80;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: $sans-serif-font;
 	font-size: 0.75em;
 	line-height: 1.334em;
 	color: $color-blue-60;
@@ -1469,7 +1469,7 @@ img[src$="#full"] {
 	height: 2em;
 	margin: 0;
 	padding: 2em 0;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: $sans-serif-font;
 }
 // .pagination:after {
 // 	position: absolute;
