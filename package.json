@@ -2,7 +2,7 @@
   "name": "attila",
   "description": "Ghost Theme",
   "demo": "https://waiyanyoon.com",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "engines": {
     "ghost": ">=2.1.0"
   },
